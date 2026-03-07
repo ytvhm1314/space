@@ -25,7 +25,7 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* SAO BĂNG BAY */
+/* sao băng bay */
 
 .stars{
 position:fixed;
@@ -90,7 +90,7 @@ font-size:1.3rem;
 color:#fff;
 }
 
-/* MAIN GLASSMORPHISM */
+/* MAIN GLASSMORPHISM (hiệu ứng mờ )  */
 
 main{
 max-width:900px;
@@ -121,7 +121,7 @@ margin-top:40px;
 text-transform:uppercase;
 }
 
-/* GALLERY */
+/* GALLERY ( góc ảnh ) */
 
 .gallery{
 display:grid;
@@ -261,7 +261,7 @@ color:white;
 cursor:pointer;
 user-select:none;
 
-/* glassmorphism */
+/* glassmorphism ( hiệu ứng mở ảnh ) */
 
 background:rgba(255,255,255,0.08);
 backdrop-filter: blur(10px);
@@ -272,11 +272,11 @@ box-shadow:0 0 15px rgba(0,210,255,0.4);
 transition:0.3s;
 }
 
-/* nút nhạc */
+/* custom nút nhạc */
 
 .music-control{
 position:fixed;
-top:20px;
+top:30px;
 right:20px;
 z-index:50;
 }
@@ -286,7 +286,7 @@ background:rgba(255,255,255,0.1);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.2);
 color:white;
-padding:10px 20px;
+padding:15px 25px;
 border-radius:30px;
 cursor:pointer;
 font-weight:bold;
@@ -295,7 +295,7 @@ transition:0.3s;
 
 .music-control button:hover{
 background:rgba(255,255,255,0.2);
-transform:scale(1.05);
+transform:scale(1.2);
 }
 
 </style>
@@ -310,10 +310,6 @@ transform:scale(1.05);
 
 
 </label>
-
-<audio id="bgMusic" loop>
-<source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
-</audio>
 
 
 <div class="stars" id="stars"></div>
@@ -345,14 +341,27 @@ transform:scale(1.05);
 </section>
 
 <section>
-<h2>Góc Ảnh Vũ Trụ</h2>
+<h2>Góc Ảnh (Ảnh: NASA) </h2>
 
 <div class="gallery">
 
 <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa" onclick="openImg(this.src)">
-<img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679" onclick="openImg(this.src)">
-<img src="https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6" onclick="openImg(this.src)">
-<img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1qVSScGsFnRtnqbR6YGLJ2PPUYORfIKKY" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1E8DKi0__W78wWPfyMinEXj1U2puYzf8q" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1SKB2oQRh0N8HgPIbOu1mqTEWH9Gybfut" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1AQ5piHUVwx7gTOaS2VzF0LUYiOsP19jZ" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1u17PFBgAmXlPXhSehHwzs5bGmwn1KN3P" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1Zu-4GGUpEPz04pS2HkV8jqz97b7c6wWm" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1kJDBa824ieXNBsWmnD0Lkjem_o1pJo5L" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1egv75qlCmlwIpmcwBzADh8KRSCmBjF1F" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1GSfu11pPFyOAd-hntL7gnbtkXKGTznXm" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1_C2tM1AIgNsPZ1iMVYXZltn3U-t7fS7G" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1xHRBnYoXQTzHQXCRYLmgDOZeq_Gr6__H" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/19Nuk73LrVZk8RLG4unKUJ9-DbZjhcyhL" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1eaK-lLysVRDBxmK0URHVNuDmFtFAY-LX" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1LzYs1SNfTjtCdkqOtHWSv1y6NQ9yi1Kq" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1DcmT9_IWZKvGvayI2umTKxH03bQ2ysL0" onclick="openImg(this.src)">
+
 
 </div>
 
@@ -362,7 +371,7 @@ transform:scale(1.05);
 <h2>Góc Phim & Nhạc Không Gian</h2>
 
 <div style="background:#1a1e2e;height:200px;display:flex;align-items:center;justify-content:center;border-radius:10px;border:1px dashed #444;">
-<span style="color:#777;">[Khung video NASA]</span>
+<span style="color:#777;">[Không có gì]</span>
 </div>
 
 </section>
@@ -381,7 +390,7 @@ transform:scale(1.05);
 </main>
 
 <footer>
-
+<div><strong>Tài liệu tham khảo:</strong> NASA</div>
 <div><strong>Thực hiện:</strong> Quốc Anh, Gia Bảo 12c3  </div>
 <div><strong>Email:</strong> none@gmail.com</div>
 <div><strong>Update:</strong> 06/03/2026</div>
@@ -417,7 +426,7 @@ document.getElementById("stars").appendChild(star)
 
 }
 
-/* LIGHTBOX */
+/* lightbox( viền phát sáng )  */
 
 let imgs=document.querySelectorAll(".gallery img")
 let currentIndex=0
@@ -466,7 +475,7 @@ document.getElementById("lightboxImg").src=imgs[currentIndex].src
 
 }
 
-/* CLICK NGOÀI ẢNH */
+/* click ngoài ảnh để đóng ảnh đang mở */
 
 document.getElementById("lightbox").addEventListener("click",function(e){
 
@@ -495,31 +504,64 @@ if(endX-startX>50){prevImg()}
 })
 
 
-/* NHẠC NỀN */
+/* nhạc nền */
+let music = document.getElementById("bgMusic")
 
-let music=document.getElementById("bgMusic")
+music.volume = 0
+
+function fadeIn(){
+
+music.volume = 0
+music.play()
+
+
+/* âm lượng tăng dần và giảm dần sau khi on/off */
+let fade = setInterval(function(){
+
+if(music.volume < 0.4){
+music.volume += 0.02
+}else{
+clearInterval(fade)
+}
+
+},100)
+
+}
+
+function fadeOut(){
+
+let fade = setInterval(function(){
+
+if(music.volume > 0.02){
+music.volume -= 0.02
+}else{
+music.pause()
+clearInterval(fade)
+}
+
+},100)
+
+}
 
 function toggleMusic(){
 
 if(music.paused){
-music.play()
+fadeIn()
 }else{
-music.pause()
+fadeOut()
 }
 
 }
 
-/* tự phát sau khi người dùng click lần đầu */
+/* click bất kì để phát nhạc */
 
 document.body.addEventListener("click",function(){
 
 if(music.paused){
-music.volume=0.4
-music.play()
+fadeIn()
 }
 
 },{once:true})
-
 </script>
 
 </body>
