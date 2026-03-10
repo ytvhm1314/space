@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>test 1</title>
+<title>Khám Phá Vũ Trụ - Nhóm Thiên Văn</title>
 
 <style>
 
@@ -72,17 +72,51 @@ opacity:0;
 
 
 header{
-background:rgba(0,0,0,0.45);
 padding:100px 20px;
 text-align:center;
 text-shadow:0 0 15px rgba(0,210,255,0.8);
 }
 
 header h1{
-font-size:3.5rem;
+font-size:3.8rem;
 margin:0;
-letter-spacing:5px;
-color:#00d2ff;
+letter-spacing:6px;
+font-weight:900;
+
+/* màu galaxy */
+
+background:linear-gradient(
+90deg,
+#00eaff,
+#8a7dff,
+#00eaff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+/* ánh sáng */
+
+text-shadow:
+0 0 10px rgba(0,234,255,0.8),
+0 0 20px rgba(138,125,255,0.7),
+0 0 40px rgba(0,234,255,0.5);
+
+/* hiệu ứng nhẹ */
+
+animation:spaceGlow 4s infinite alternate;
+}
+
+@keyframes spaceGlow{
+
+0%{
+filter:brightness(1);
+}
+
+100%{
+filter:brightness(1);
+}
+
 }
 
 header p{
@@ -96,17 +130,12 @@ main{
 max-width:900px;
 margin:-50px auto 40px;
 padding:30px;
-
 background:rgba(20,25,45,0.45);
-
 backdrop-filter:blur(12px);
 -webkit-backdrop-filter:blur(12px);
-
-box-shadow:0 0 40px rgba(0,210,255,0.25);
-
+box-shadow:0 0 30px rgba(0,210,255,0.25);
 border-radius:25px;
 border:1px solid rgba(255,255,255,0.15);
-
 position:relative;
 z-index:2;
 }
@@ -120,31 +149,93 @@ padding-left:15px;
 margin-top:40px;
 text-transform:uppercase;
 }
-
-/* GALLERY ( góc ảnh ) */
+/* CAROUSEL 3D */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-margin-top:20px;
-}
-
-.gallery img{
+position:relative;
 width:100%;
-height:180px;
-object-fit:cover;
-border-radius:10px;
-filter:grayscale(30%);
-transition:0.5s;
-cursor:pointer;
-border:1px solid rgba(255,255,255,0.1);
+height:400px;
+margin-top:30px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
-filter:grayscale(0%);
-border-color:#00d2ff;
+.carousel{
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+width:100%;
+height:100%;
+}
+
+.carousel img{
+position:absolute;
+width:450px;
+height:260px;
+object-fit:cover;
+border-radius:12px;
+transition:all 0.6s ease;
+cursor:pointer;
+opacity:0;
+}
+
+/* ảnh giữa */
+.carousel img.center{
+transform:translateX(0) scale(1.3);
+opacity:1;
+z-index:5;
+box-shadow:0 0 10px rgba(0,0,0);
+}
+
+/* ảnh trái phải */
+.carousel img.left{
+transform:translateX(-220px) scale(0.9);
+opacity:0.7;
+z-index:4;
+}
+.carousel img.right{
+transform:translateX(220px) scale(0.9);
+opacity:0.7;
+z-index:4;
+}
+
+/* ảnh xa hơn */
+.carousel img.far-left{
+transform:translateX(-380px) scale(0.6);
+opacity:0.1;
+}
+.carousel img.far-right{
+transform:translateX(380px) scale(0.6);
+opacity:0.1;
+}
+
+/* nút */
+
+.carousel-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:12px 16px;
+user-select:none;
+
+z-index:100;   /* thêm dòng này */
+
+background:rgba(0,0,0,0.4);
+border-radius:50%;
+backdrop-filter:blur(5px);
+}
+
+.carousel-prev{left:10px;}
+.carousel-next{right:10px;}
+
+.carousel-btn:hover{
+color:#00d2ff;
 }
 
 /* FORM */
@@ -205,7 +296,7 @@ z-index:999;
 max-width:85%;
 max-height:85%;
 border-radius:12px;
-box-shadow:0 0 15px rgba(255,255,255);
+box-shadow:0 0 10px rgba(255,255,255);
 transform:scale(0.8);
 transition:0.4s;
 }
@@ -227,37 +318,28 @@ user-select:none;
 
 .prev{left:30px;}
 .next{right:30px;}
-
 .nav:hover{
 color:#00d2ff;
 }
 
 /* Ẩn checkbox */
-
 #musicToggle{
 display:none;
 }
 
 /* Nút nhạc */
-
 .musicBtn{
-
 position:fixed;
 bottom:25px;
 right:25px;
-
 width:60px;
 height:60px;
-
 border-radius:50%;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 font-size:26px;
 color:white;
-
 cursor:pointer;
 user-select:none;
 
@@ -298,6 +380,9 @@ background:rgba(255,255,255,0.2);
 transform:scale(1.2);
 }
 
+
+
+
 </style>
 </head>
 
@@ -316,7 +401,7 @@ transform:scale(1.2);
 
 <header>
 <h1>Tinh Không Huyền Bí</h1>
-<p>Hành trình khám phá những điều chưa biết</p>
+<p>Khám phá những điều chưa biết</p>
 </header>
 
 
@@ -345,25 +430,34 @@ transform:scale(1.2);
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa" onclick="openImg(this.src)">
+<span class="carousel-btn carousel-prev" onclick="move(-1)">❮</span>
+
+<div class="carousel" id="carousel">
+<img src="https://lh3.googleusercontent.com/d/1dW7U525BqcO_g-FkhOoRTkv7rGhksVp1" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa"onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1qVSScGsFnRtnqbR6YGLJ2PPUYORfIKKY" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1E8DKi0__W78wWPfyMinEXj1U2puYzf8q" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1SKB2oQRh0N8HgPIbOu1mqTEWH9Gybfut" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1AQ5piHUVwx7gTOaS2VzF0LUYiOsP19jZ" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1u17PFBgAmXlPXhSehHwzs5bGmwn1KN3P" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1Zu-4GGUpEPz04pS2HkV8jqz97b7c6wWm" onclick="openImg(this.src)">
-<img src="https://lh3.googleusercontent.com/d/1kJDBa824ieXNBsWmnD0Lkjem_o1pJo5L" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1gQ53rYMnGxVB10CKtflo3BEss3XOnyNA" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1egv75qlCmlwIpmcwBzADh8KRSCmBjF1F" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1GSfu11pPFyOAd-hntL7gnbtkXKGTznXm" onclick="openImg(this.src)">
-<img src="https://lh3.googleusercontent.com/d/1_C2tM1AIgNsPZ1iMVYXZltn3U-t7fS7G" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1A4DNoHQLay9kk5m5jzwgoftX7PkMpLWB" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1xHRBnYoXQTzHQXCRYLmgDOZeq_Gr6__H" onclick="openImg(this.src)">
-<img src="https://lh3.googleusercontent.com/d/19Nuk73LrVZk8RLG4unKUJ9-DbZjhcyhL" onclick="openImg(this.src)">
+<img src="https://lh3.googleusercontent.com/d/1wKA6EL7Q3fYhTNfAzoxMsdyTY21A6YWb" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1eaK-lLysVRDBxmK0URHVNuDmFtFAY-LX" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1LzYs1SNfTjtCdkqOtHWSv1y6NQ9yi1Kq" onclick="openImg(this.src)">
 <img src="https://lh3.googleusercontent.com/d/1DcmT9_IWZKvGvayI2umTKxH03bQ2ysL0" onclick="openImg(this.src)">
 
 
 </div>
+
+<span class="carousel-btn carousel-next" onclick="move(1)">❯</span>
+
+</div>
+
 
 </section>
 
@@ -408,6 +502,8 @@ transform:scale(1.2);
 
 <script>
 
+
+
 /* SAO BĂNG */
 
 for(let i=0;i<80;i++){
@@ -425,6 +521,9 @@ star.style.animationDuration=(Math.random()*8+6)+"s"
 document.getElementById("stars").appendChild(star)
 
 }
+
+
+
 
 /* lightbox( viền phát sáng )  */
 
@@ -475,6 +574,8 @@ document.getElementById("lightboxImg").src=imgs[currentIndex].src
 
 }
 
+
+
 /* click ngoài ảnh để đóng ảnh đang mở */
 
 document.getElementById("lightbox").addEventListener("click",function(e){
@@ -484,6 +585,8 @@ closeImg()
 }
 
 })
+
+
 
 /* VUỐT ĐIỆN THOẠI */
 
@@ -518,7 +621,7 @@ music.play()
 /* âm lượng tăng dần và giảm dần sau khi on/off */
 let fade = setInterval(function(){
 
-if(music.volume < 0.2){
+if(music.volume < 0.4){
 music.volume += 0.02
 }else{
 clearInterval(fade)
@@ -562,6 +665,89 @@ fadeIn()
 }
 
 },{once:true})
+
+
+/* script 3d */
+
+let carousel = document.getElementById("carousel")
+let slides = carousel.querySelectorAll("img")
+
+let current = 0
+
+function updateCarousel(){
+
+slides.forEach(img=>{
+img.className=""
+})
+
+let total = slides.length
+
+slides[current].classList.add("center")
+
+slides[(current-1+total)%total].classList.add("left")
+slides[(current+1)%total].classList.add("right")
+
+slides[(current-2+total)%total].classList.add("far-left")
+slides[(current+2)%total].classList.add("far-right")
+
+}
+
+function move(step){
+
+current += step
+
+if(current >= slides.length) current = 0
+if(current < 0) current = slides.length-1
+
+updateCarousel()
+
+}
+
+/* tự động lướt */
+
+let autoTimer
+let resumeTimer
+
+function startAuto(){
+autoTimer = setInterval(()=>{
+move(1)
+},4000)
+}
+
+function stopAuto(){
+clearInterval(autoTimer)
+}
+
+function userAction(){
+
+stopAuto()
+
+clearTimeout(resumeTimer)
+
+resumeTimer = setTimeout(()=>{
+startAuto()
+},2000)
+
+}
+
+/* sửa move */
+
+let oldMove = move
+
+move = function(step){
+
+oldMove(step)
+
+userAction()
+
+}
+
+/* auto */
+
+updateCarousel()
+startAuto()
+
+
 </script>
 
 </body>
